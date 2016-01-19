@@ -1,0 +1,32 @@
+developer:
+  build: .
+  ports:
+   - "8080:8080"
+   - "8787:8787"
+  volumes:
+   - $OVIRT_ENGINE_SRC:/home/ovirt/src/ovirt-engine
+   - /tmp/.X11-unix:/tmp/.X11-unix
+   - $HOME/.Xauthority:/home/ovirt/.Xauthority
+   #- ovirt-engine-schema:master
+  links:
+   - db
+   #- vdsm-simulator
+  working_dir: /home/ovirt/src
+  user: root
+  environment:
+    - DISPLAY
+  entrypoint: /bin/bash
+
+db:
+  image: centos/postgresql
+  hostname: db
+  volumes_from:
+   - db_data
+db_data:
+  build: db/.
+#TODO
+#vdsm-simulator:
+#  image: vdsm-simulator
+#  hostname: vdsm-simulator
+
+

@@ -16,6 +16,6 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export PREFIX=$HOME/deploy
 export INTELLIJ_PATH=$HOME/idea
-ln -s $HOME/$(dirname $(tar -tf idea15.tar.gz | head -1)) $INTELLIJ_PATH
+ln -s $HOME/$(dirname $(tar -tf $HOME/idea15.tar.gz | head -1)) $INTELLIJ_PATH
 alias intellij='$INTELLIJ_PATH/bin/idea.sh'
 

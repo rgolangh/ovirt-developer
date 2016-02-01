@@ -38,9 +38,11 @@ RUN dnf install -y \
 USER ovirt
 WORKDIR /home/ovirt
 
-ADD ovirt.bashrc .bashrc
+
 RUN curl -o idea15.tar.gz https://d1opms6zj7jotq.cloudfront.net/idea/ideaIC-15.0.3.tar.gz \
     && tar -zxvf idea15.tar.gz \
     && mkdir -p bin src src/ovirt-engine deploy
+
+ADD ovirt.bashrc .bashrc
 
 CMD bash

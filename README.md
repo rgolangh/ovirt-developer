@@ -9,10 +9,12 @@ $ xhost +
 $ docker-compose up
 ```
 
-- The ovirt engine repo is located at /home/ovirt/src
-- database is reachave at hostname db, accesible with no pass
+### What you get:
+- 3 differnt docker container, 1 for the OS (Fedora 23) with ovirt-engine-jboss + jdk8 + git + mvn, 1 postgres on Centos and 1 data container exposing the db data folder. This give you enough flexibility to switch/upgrade components without problems (and also aligned with docker's principles)
+- Your ovirt-engine repo located at `/home/ovirt/src`
+- Empty database reachable at hostname `db`, accesible with no password. It needs the inital setup (may change later)
   ```$ psql -h db engine engine ```
-- Start the IDE
+- Intellij IDEA 15 community edition
   ```$ intellij &```
 
 ## In depth

@@ -6,7 +6,8 @@ To get you started, simply spin the compsed docker up:
 ```
 $ # share you xsession, run once
 $ xhost +
-$ docker-compose up
+$ docker-compose build
+$ docker-compose run developer intellij
 ```
 
 ### What you get:
@@ -36,7 +37,7 @@ I also had technical issues with the docker storage driver and switch to the ove
   $ root@localhost DOCKER_STORAGE_OPTIONS=--storage-driver overlay
   ```
 
-Initiate a `docker-compose up` command, it will build all containers and run them. Consecutive calls will run it wihout building (follow docker-compose docs). 
+Initiate a `docker-compose up` command, it will build all containers and run them. Consecutive calls will run it wihout building (follow docker-compose docs).
 
 
 ## API Reference

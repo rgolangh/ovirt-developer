@@ -12,7 +12,7 @@ developer:
    - db
    #- vdsm-simulator
   working_dir: /home/ovirt/src
-  user: root
+  user: ovirt
   environment:
     - DISPLAY
   entrypoint: /bin/bash

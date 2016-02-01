@@ -47,11 +47,10 @@ Describe and show how to run the tests with code examples.
 
 ## Contributors
 
-*Author* - rgolan@redhat.com
-
-*irc* - #ovirt at irc.oftc.net
-*mailing list* - devel@ovirt.org
-*issue tracker* - report [here, in the github project](https://github.com/rgolangh/ovirt-developer/issues)
+* **Author** - rgolan@redhat.com
+* **irc** - #ovirt at irc.oftc.net
+* **mailing list** - devel@ovirt.org
+* **issue tracker** - [report here](https://github.com/rgolangh/ovirt-developer/issues)
 
 ## License
 

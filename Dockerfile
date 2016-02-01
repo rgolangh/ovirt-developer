@@ -31,6 +31,7 @@ RUN dnf install -y \
     zenity \
     unzip \
     bind-utils \
+    && dnf groupinstall -y \
     base-x
 
 
@@ -40,8 +41,7 @@ WORKDIR /home/ovirt
 ADD ovirt.bashrc .bashrc
 RUN curl -o idea15.tar.gz https://d1opms6zj7jotq.cloudfront.net/idea/ideaIC-15.0.3.tar.gz \
     && tar -zxvf idea15.tar.gz \
-    && ln -s $(dirname $(tar -tvf  idea15.tar.gz | head a   -1 |tr -s ' '| cut -d " " -f6)) idea15 \
     && mkdir -p bin src src/ovirt-engine deploy \
-    && ln -s /home/ovirt/idea15/bin/idea.sh /home/ovirt/bin/intellij
+    && ln -s $(dirname $(tar -tf idea15.tar.gz | head -1))/bin/idea.sh bin/intellij
 
 CMD bash

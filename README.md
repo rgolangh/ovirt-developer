@@ -23,8 +23,7 @@ $ docker-compose run developer intellij
   ```
 
 ## In depth
-
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+TODO
 
 ## Motivation
 TODO
@@ -32,6 +31,7 @@ A short description of the motivation behind the creation and maintenance of the
 
 ## Installation
 TODO-continue
+
 The installation will pull and build few images on your machines, reuse your xsession socket, and mount your ovirt-engine git repository so every change made inside the container will be persisted out side of it. Alternatively this can be changed, we'll get that later.
 So make sure you have few free Gb to for the images. Docker saves its images under /var/lib/docker. Personnaly I quickly ran out of space on / so my /var/lib/docker a symlink to /home/user/docker. Change it and restart docker service, your done.
 
@@ -46,11 +46,8 @@ Initiate a `docker-compose up` command, it will build all containers and run the
 
 ## API Reference
 TODO
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
 
-## Tests
-TODO
-Describe and show how to run the tests with code examples.
+Descrive here the various tweaks, configuration, the ENV params uasge and so on
 
 ## Contributors
 

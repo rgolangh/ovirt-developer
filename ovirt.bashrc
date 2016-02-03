@@ -19,3 +19,5 @@ export INTELLIJ_PATH=$HOME/idea
 ln -s $HOME/$(dirname $(tar -tf $HOME/idea15.tar.gz | head -1)) $INTELLIJ_PATH
 alias intellij='$INTELLIJ_PATH/bin/idea.sh'
 
+source /usr/share/doc/git-core-doc/contrib/completion/git-prompt.sh
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '

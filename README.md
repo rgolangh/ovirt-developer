@@ -15,7 +15,23 @@ To get you started, simply spin the compsed docker up:
 ```
 $ # share you xsession, run once
 $ xhost +
-$ docker-compose run developer intellij
+$ docker-compose run developer
+```
+
+Clone ovirt engine:
+```
+# dirctory should be /home/ovirt/src
+# if you want to push patches to gerrit, clone the repo with sshh + your username
+$ git clone git+ssh://UESRNAME@gerrit.ovirt.org/ovirt-engine
+```
+
+Create engine user + database:
+```                                                                   
+  psql -h db postgres postgres <<EOF                                  
+    create user engine password 'engine';                             
+    create database engine owner engine template template0            
+    encoding 'UTF8' lc_collate 'en_US.UTF-8' lc_ctype 'en_US.UTF-8';  
+  EOF                                                                 
 ```
 
 ### What you get:
@@ -23,8 +39,6 @@ $ docker-compose run developer intellij
 - The source code is `src` dir on the host machine. Clone the ovirt-engine project to it from within or outside the container(it is a mounted volume so it persist).
 - The db directory will be intialized by the postgres container and from there you can login to the db instance using ``` psql -h db postgres postgres #password is 'postgres' ```
 - This give you enough flexibility to switch/upgrade components without problems (and also aligned with docker's principles)
-- Your ovirt-engine repo located at `/home/ovirt/src`
-
 - Intellij IDEA 15 community edition
   ```
   $ intellij &

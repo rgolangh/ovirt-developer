@@ -4,7 +4,9 @@ Ovirt-developer aims to lower the bar for getting started with developing for ov
 ## Go, develop!
 Installation:
 ```
-$ sudo dnf install docker-compose
+$ sudo dnf install docker docker-compose
+$ usermod -a -G docker [USER_NAME]
+
 $ git clone https://github.com/rgolangh/ovirt-developer/
 $ cd ovirt-developer
 $ mkdir src db

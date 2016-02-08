@@ -5,22 +5,20 @@ developer:
    - "8787:8787"
    - "8443:8443"
   volumes:
-   - $OVIRT_ENGINE_SRC:/home/ovirt/src/ovirt-engine
+   - ./src:/home/ovirt/src/ovirt-engine
    - /tmp/.X11-unix:/tmp/.X11-unix
    - $HOME/.Xauthority:/home/ovirt/.Xauthority
   links:
    - db
-  working_dir: /home/ovirt/src
+  working_dir: /home/ovirt/src/ovirt-engine
   user: ovirt
   environment:
     - DISPLAY
   entrypoint: /bin/bash
-
 db:
-  image: centos/postgresql
+  image: docker.io/fedora/postgresql
   hostname: db
-  volumes_from:
-   - db_data
-
-db_data:
-  build: db/.
+  volumes:
+   - ./db:/var/lib/pgsql/data
+  environment:
+   - POSTGRESQL_ADMIN_PASSWORD=postgres

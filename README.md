@@ -82,4 +82,4 @@ Descrive here the various tweaks, configuration, the ENV params uasge and so on
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+MIT license

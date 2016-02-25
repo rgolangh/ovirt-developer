@@ -8,7 +8,6 @@ USER root
 RUN useradd ovirt
 RUN touch /var/lib/rpm/* \
     && dnf install -y \
-    firefox \
     git \
     java-1.8.0-openjdk-devel \
     maven \

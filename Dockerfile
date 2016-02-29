@@ -4,16 +4,16 @@ EXPOSE 8080:8080
 EXPOSE 8787:8787
 
 USER root
-RUN useradd ovirt \
-    && touch /var/lib/rpm/* \
+
+RUN useradd ovirt
+RUN touch /var/lib/rpm/* \
     && dnf install -y \
-    firefox \
     git \
     java-1.8.0-openjdk-devel \
     maven \
     postgresql \
-    http://resources.ovirt.org/pub/yum-repo/ovirt-release-master.rpm
-RUN dnf install -y \
+    http://resources.ovirt.org/pub/yum-repo/ovirt-release-master.rpm \
+    && dnf install -y \
     ovirt-engine-wildfly \
     m2crypto \
     python-psycopg2 \
@@ -32,12 +32,11 @@ RUN dnf install -y \
     unzip \
     bind-utils \
     && dnf groupinstall -y \
-    base-x
-
+    base-x \
+    && dnf clean all
 
 USER ovirt
 WORKDIR /home/ovirt
-
 
 RUN curl -o idea15.tar.gz https://d1opms6zj7jotq.cloudfront.net/idea/ideaIC-15.0.3.tar.gz \
     && tar -zxvf idea15.tar.gz \
